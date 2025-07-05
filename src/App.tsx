@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Moon, Sun, Menu, X, ArrowRight, Users, Target, Award, TrendingUp, Globe2, Shield, Zap, Code, Database, Cloud, Mail, Phone, CheckCircle, Star, Briefcase, Lightbulb, Rocket, Building2 } from 'lucide-react';
+import { Moon, Sun, Menu, X, ArrowRight, Users, Target, Award, TrendingUp, Globe2, Shield, Zap, Code, Database, Cloud, Mail, Phone, CheckCircle, Star, Briefcase, Lightbulb, Rocket, Building2, Clock } from 'lucide-react';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -145,53 +145,53 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors duration-300">
+    <div className="min-h-screen bg-slate-50 dark:bg-black transition-colors duration-300">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-b border-gray-100 dark:border-slate-800">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-black/95 backdrop-blur-sm border-b border-slate-200 dark:border-zinc-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-3">
-              <img 
-                src="/Group 2201.png" 
-                alt="Ripe Hash - Technology Made Simple" 
-                className="h-7 w-auto"
-              />
+            <img 
+  src={darkMode ? "/Group 2201-white.png" : "/Group 2201.png"}
+  alt="Ripe Hash - Technology Made Simple" 
+  className="h-7 w-auto"
+/>
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
               <button 
                 onClick={() => scrollToSection('about')}
-                className="text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors font-medium"
+                className="text-sm text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors font-medium"
               >
                 About
               </button>
               <button 
                 onClick={() => scrollToSection('services')}
-                className="text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors font-medium"
+                className="text-sm text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors font-medium"
               >
                 Services
               </button>
               <button 
                 onClick={() => scrollToSection('founders')}
-                className="text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors font-medium"
+                className="text-sm text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors font-medium"
               >
                 Leadership
               </button>
               <button 
                 onClick={() => scrollToSection('products')}
-                className="text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors font-medium"
+                className="text-sm text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors font-medium"
               >
                 Products
               </button>
               <button 
                 onClick={() => scrollToSection('insights')}
-                className="text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors font-medium"
+                className="text-sm text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors font-medium"
               >
                 Insights
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors font-medium"
+                className="text-sm text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors font-medium"
               >
                 Contact
               </button>
@@ -200,25 +200,25 @@ function App() {
             <div className="flex items-center space-x-4">
               <button
                 onClick={toggleDarkMode}
-                className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors"
+                className="p-2 rounded-md hover:bg-slate-100 dark:hover:bg-zinc-800 transition-colors"
                 aria-label="Toggle dark mode"
               >
                 {darkMode ? (
                   <Sun className="w-4 h-4 text-yellow-500" />
                 ) : (
-                  <Moon className="w-4 h-4 text-gray-600" />
+                  <Moon className="w-4 h-4 text-slate-600" />
                 )}
               </button>
               
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors"
+                className="md:hidden p-2 rounded-md hover:bg-slate-100 dark:hover:bg-zinc-800 transition-colors"
                 aria-label="Toggle mobile menu"
               >
                 {mobileMenuOpen ? (
-                  <X className="w-4 h-4 text-gray-600 dark:text-gray-300" />
+                  <X className="w-4 h-4 text-slate-600 dark:text-slate-300" />
                 ) : (
-                  <Menu className="w-4 h-4 text-gray-600 dark:text-gray-300" />
+                  <Menu className="w-4 h-4 text-slate-600 dark:text-slate-300" />
                 )}
               </button>
             </div>
@@ -227,13 +227,13 @@ function App() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-white dark:bg-slate-900 border-t border-gray-100 dark:border-slate-800">
+          <div className="md:hidden bg-white dark:bg-black border-t border-slate-200 dark:border-zinc-800">
             <div className="px-4 py-2 space-y-1">
               {['about', 'services', 'founders', 'products', 'insights', 'contact'].map((section) => (
                 <button 
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className="block w-full text-left px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors font-medium capitalize"
+                  className="block w-full text-left px-3 py-2 text-sm text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors font-medium capitalize"
                 >
                   {section === 'founders' ? 'Leadership' : section}
                 </button>
@@ -244,37 +244,37 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-16 pb-24 bg-gradient-to-br from-white via-gray-50 to-white dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+      <section className="pt-16 pb-24 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-black dark:via-zinc-900 dark:to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center py-20">
             <div className="mb-8">
               <div className="flex justify-center mb-12">
-                <img 
-                  src="/Group 2201.png" 
-                  alt="Ripe Hash - Technology Made Simple" 
-                  className="h-12 w-auto"
-                />
+             <img 
+  src={darkMode ? "/Group 2201-white.png" : "/Group 2201.png"}
+  alt="Ripe Hash - Technology Made Simple" 
+  className="h-12 w-auto"
+/>
               </div>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-8 leading-tight tracking-tight">
-              Technology Made <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Simple</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-8 leading-tight tracking-tight">
+              Technology Made <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500">Simple</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-12 max-w-4xl mx-auto leading-relaxed">
               We are a leading technology parent company dedicated to building innovative products that make complex technology effortless and accessible. Our mission is to bridge the gap between advanced technical capabilities and seamless user experiences, creating solutions that empower individuals and businesses worldwide.
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-20">
               <button 
                 onClick={() => scrollToSection('products')}
-                className="px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-sm font-semibold hover:bg-gray-800 dark:hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                className="px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-black text-sm font-semibold hover:bg-slate-800 dark:hover:bg-slate-100 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 Explore Our Products
               </button>
               <button 
                 onClick={() => scrollToSection('about')}
-                className="px-8 py-4 border-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-300 text-sm font-semibold hover:border-gray-400 dark:hover:border-gray-500 hover:bg-gray-50 dark:hover:bg-slate-800 transition-all duration-300 transform hover:scale-105"
+                className="px-8 py-4 border-2 border-slate-300 dark:border-zinc-600 text-slate-900 dark:text-slate-300 text-sm font-semibold hover:border-slate-400 dark:hover:border-zinc-500 hover:bg-slate-100 dark:hover:bg-zinc-800 transition-all duration-300 transform hover:scale-105"
               >
                 Learn More About Us
               </button>
@@ -285,12 +285,12 @@ function App() {
               {stats.map((stat, index) => (
                 <div key={index} className="text-center animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
                   <div className="flex justify-center mb-2">
-                    <div className="text-gray-600 dark:text-gray-400">
+                    <div className="text-slate-600 dark:text-slate-400">
                       {stat.icon}
                     </div>
                   </div>
-                  <div className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1">{stat.number}</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
+                  <div className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-1">{stat.number}</div>
+                  <div className="text-sm text-slate-600 dark:text-slate-400">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -299,22 +299,22 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 bg-gray-50 dark:bg-slate-800 scroll-mt-16">
+      <section id="about" className="py-24 bg-white dark:bg-zinc-900 scroll-mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="animate-fade-in">
               <div className="mb-6">
-                <div className="w-12 h-1 bg-orange-500 mb-4"></div>
-                <div className="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider mb-4">
+                <div className="w-12 h-1 bg-gradient-to-r from-red-500 to-pink-500 mb-4"></div>
+                <div className="text-sm font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-4">
                   ABOUT RIPE HASH
                 </div>
               </div>
               
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-8 leading-tight">
                 Pioneering the Future of Technology Accessibility
               </h2>
               
-              <div className="space-y-6 text-gray-600 dark:text-gray-400 leading-relaxed">
+              <div className="space-y-6 text-slate-600 dark:text-slate-400 leading-relaxed">
                 <p className="text-lg">
                   Founded with the vision of democratizing technology access, Ripe Hash operates as a parent company focused on developing innovative solutions that simplify complex technological processes. We believe that powerful technology should be intuitive and accessible to everyone, regardless of their technical background.
                 </p>
@@ -327,15 +327,15 @@ function App() {
               </div>
 
               <div className="mt-8 flex flex-wrap gap-4">
-                <div className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
+                <div className="flex items-center space-x-2 text-sm text-slate-600 dark:text-slate-400">
                   <CheckCircle className="w-4 h-4 text-green-500" />
                   <span>ISO 27001 Certified</span>
                 </div>
-                <div className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
+                <div className="flex items-center space-x-2 text-sm text-slate-600 dark:text-slate-400">
                   <CheckCircle className="w-4 h-4 text-green-500" />
                   <span>SOC 2 Type II Compliant</span>
                 </div>
-                <div className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
+                <div className="flex items-center space-x-2 text-sm text-slate-600 dark:text-slate-400">
                   <CheckCircle className="w-4 h-4 text-green-500" />
                   <span>GDPR Compliant</span>
                 </div>
@@ -343,21 +343,21 @@ function App() {
             </div>
             
             <div className="grid grid-cols-2 gap-8 animate-slide-up">
-              <div className="bg-white dark:bg-slate-900 p-6 rounded-lg shadow-lg text-center">
-                <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">10+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Years Combined Experience</div>
+              <div className="bg-slate-100 dark:bg-black p-6 rounded-lg shadow-lg text-center border border-slate-200 dark:border-zinc-800">
+                <div className="text-3xl font-bold text-slate-900 dark:text-white mb-2">10+</div>
+                <div className="text-sm text-slate-600 dark:text-slate-400">Years Combined Experience</div>
               </div>
-              <div className="bg-white dark:bg-slate-900 p-6 rounded-lg shadow-lg text-center">
-                <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">50K+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Users Served Globally</div>
+              <div className="bg-slate-100 dark:bg-black p-6 rounded-lg shadow-lg text-center border border-slate-200 dark:border-zinc-800">
+                <div className="text-3xl font-bold text-slate-900 dark:text-white mb-2">50K+</div>
+                <div className="text-sm text-slate-600 dark:text-slate-400">Users Served Globally</div>
               </div>
-              <div className="bg-white dark:bg-slate-900 p-6 rounded-lg shadow-lg text-center">
-                <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">99.9%</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Uptime Guarantee</div>
+              <div className="bg-slate-100 dark:bg-black p-6 rounded-lg shadow-lg text-center border border-slate-200 dark:border-zinc-800">
+                <div className="text-3xl font-bold text-slate-900 dark:text-white mb-2">99.9%</div>
+                <div className="text-sm text-slate-600 dark:text-slate-400">Uptime Guarantee</div>
               </div>
-              <div className="bg-white dark:bg-slate-900 p-6 rounded-lg shadow-lg text-center">
-                <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">24/7</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Support Available</div>
+              <div className="bg-slate-100 dark:bg-black p-6 rounded-lg shadow-lg text-center border border-slate-200 dark:border-zinc-800">
+                <div className="text-3xl font-bold text-slate-900 dark:text-white mb-2">24/7</div>
+                <div className="text-sm text-slate-600 dark:text-slate-400">Support Available</div>
               </div>
             </div>
           </div>
@@ -365,47 +365,47 @@ function App() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-24 bg-white dark:bg-slate-900 scroll-mt-16">
+      <section id="services" className="py-24 bg-slate-50 dark:bg-black scroll-mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fade-in">
             <div className="mb-6">
-              <div className="w-12 h-1 bg-orange-500 mx-auto mb-4"></div>
-              <div className="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider mb-4">
+              <div className="w-12 h-1 bg-gradient-to-r from-red-500 to-pink-500 mx-auto mb-4"></div>
+              <div className="text-sm font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-4">
                 OUR SERVICES
               </div>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
               Comprehensive Technology Solutions
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
               We provide end-to-end technology solutions designed to streamline operations, enhance user experiences, and drive innovation across various industries.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div key={index} className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 p-8 group hover:shadow-xl hover:border-orange-200 dark:hover:border-orange-800 transition-all duration-300 animate-slide-up" style={{animationDelay: `${index * 0.1}s`}}>
+              <div key={index} className="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-8 group hover:shadow-xl hover:border-red-200 dark:hover:border-red-800 transition-all duration-300 animate-slide-up" style={{animationDelay: `${index * 0.1}s`}}>
                 <div className="mb-6">
-                  <div className="w-8 h-1 bg-orange-500 mb-4"></div>
-                  <div className="text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider mb-4">
+                  <div className="w-8 h-1 bg-gradient-to-r from-red-500 to-pink-500 mb-4"></div>
+                  <div className="text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-4">
                     {service.category}
                   </div>
-                  <div className="w-12 h-12 bg-gray-50 dark:bg-slate-700 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-50 dark:group-hover:bg-orange-900/20 transition-colors">
-                    <div className="text-gray-700 dark:text-gray-300 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">
+                  <div className="w-12 h-12 bg-slate-100 dark:bg-zinc-800 rounded-lg flex items-center justify-center mb-4 group-hover:bg-red-50 dark:group-hover:bg-red-900/20 transition-colors">
+                    <div className="text-slate-700 dark:text-slate-300 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
                       {service.icon}
                     </div>
                   </div>
                 </div>
                 
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">
                   {service.title}
                 </h3>
                 
-                <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                <p className="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
                   {service.description}
                 </p>
                 
-                <button className="flex items-center space-x-2 bg-black dark:bg-white text-white dark:text-black px-4 py-2 text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors group-hover:bg-orange-600 dark:group-hover:bg-orange-500 dark:group-hover:text-white">
+                <button className="flex items-center space-x-2 bg-slate-900 dark:bg-white text-white dark:text-black px-4 py-2 text-sm font-medium hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors group-hover:bg-gradient-to-r group-hover:from-red-500 group-hover:to-pink-500 dark:group-hover:text-white">
                   <ArrowRight className="w-4 h-4" />
                   <span>{service.cta}</span>
                 </button>
@@ -416,37 +416,37 @@ function App() {
       </section>
 
       {/* Values Section */}
-      <section className="py-24 bg-gray-50 dark:bg-slate-800">
+      <section className="py-24 bg-white dark:bg-zinc-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fade-in">
             <div className="mb-6">
-              <div className="w-12 h-1 bg-orange-500 mx-auto mb-4"></div>
-              <div className="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider mb-4">
+              <div className="w-12 h-1 bg-gradient-to-r from-red-500 to-pink-500 mx-auto mb-4"></div>
+              <div className="text-sm font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-4">
                 OUR VALUES
               </div>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
               The Principles That Drive Excellence
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
               Our core values guide every decision we make and define our commitment to excellence in everything we create.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <div key={index} className="text-center bg-white dark:bg-slate-900 p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 animate-slide-up" style={{animationDelay: `${index * 0.1}s`}}>
+              <div key={index} className="text-center bg-slate-50 dark:bg-black p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 animate-slide-up border border-slate-200 dark:border-zinc-800" style={{animationDelay: `${index * 0.1}s`}}>
                 <div className="flex justify-center mb-6">
-                  <div className="w-16 h-16 bg-orange-50 dark:bg-orange-900/20 rounded-lg flex items-center justify-center">
-                    <div className="text-orange-600 dark:text-orange-400">
+                  <div className="w-16 h-16 bg-gradient-to-br from-red-50 to-pink-50 dark:from-red-900/20 dark:to-pink-900/20 rounded-lg flex items-center justify-center">
+                    <div className="text-red-600 dark:text-red-400">
                       {value.icon}
                     </div>
                   </div>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4">
                   {value.title}
                 </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                   {value.description}
                 </p>
               </div>
@@ -456,35 +456,35 @@ function App() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-white dark:bg-slate-900">
+      <section className="py-24 bg-slate-50 dark:bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fade-in">
             <div className="mb-6">
-              <div className="w-12 h-1 bg-orange-500 mx-auto mb-4"></div>
-              <div className="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider mb-4">
+              <div className="w-12 h-1 bg-gradient-to-r from-red-500 to-pink-500 mx-auto mb-4"></div>
+              <div className="text-sm font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-4">
                 CLIENT TESTIMONIALS
               </div>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
               Trusted by Industry Leaders
             </h2>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-gray-50 dark:bg-slate-800 p-8 rounded-lg animate-slide-up" style={{animationDelay: `${index * 0.1}s`}}>
+              <div key={index} className="bg-white dark:bg-zinc-900 p-8 rounded-lg animate-slide-up border border-slate-200 dark:border-zinc-800" style={{animationDelay: `${index * 0.1}s`}}>
                 <div className="flex mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <blockquote className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                <blockquote className="text-slate-700 dark:text-slate-300 mb-6 leading-relaxed">
                   "{testimonial.quote}"
                 </blockquote>
                 <div>
-                  <div className="font-semibold text-gray-900 dark:text-white">{testimonial.author}</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">{testimonial.role}</div>
-                  <div className="text-xs text-gray-500 dark:text-gray-500">{testimonial.company}</div>
+                  <div className="font-semibold text-slate-900 dark:text-white">{testimonial.author}</div>
+                  <div className="text-sm text-slate-600 dark:text-slate-400">{testimonial.role}</div>
+                  <div className="text-xs text-slate-500 dark:text-slate-500">{testimonial.company}</div>
                 </div>
               </div>
             ))}
@@ -493,55 +493,55 @@ function App() {
       </section>
 
       {/* Founders Section */}
-      <section id="founders" className="py-24 bg-gray-50 dark:bg-slate-800 scroll-mt-16">
+      <section id="founders" className="py-24 bg-white dark:bg-zinc-900 scroll-mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fade-in">
             <div className="mb-6">
-              <div className="w-12 h-1 bg-orange-500 mx-auto mb-4"></div>
-              <div className="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider mb-4">
+              <div className="w-12 h-1 bg-gradient-to-r from-red-500 to-pink-500 mx-auto mb-4"></div>
+              <div className="text-sm font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-4">
                 LEADERSHIP TEAM
               </div>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
               Visionary Leaders Driving Innovation
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
               Meet the experienced leaders behind Ripe Hash, bringing together decades of expertise in technology innovation and business strategy.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {founders.map((founder, index) => (
-              <div key={index} className="bg-white dark:bg-slate-900 p-8 lg:p-12 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 animate-slide-up" style={{animationDelay: `${index * 0.2}s`}}>
+              <div key={index} className="bg-slate-50 dark:bg-black p-8 lg:p-12 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 animate-slide-up border border-slate-200 dark:border-zinc-800" style={{animationDelay: `${index * 0.2}s`}}>
                 <div className="text-center mb-8">
-                  <div className="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden ring-4 ring-orange-100 dark:ring-orange-900/20">
+                  <div className="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden ring-4 ring-gradient-to-r from-red-100 to-pink-100 dark:ring-red-900/20">
                     <img 
                       src={founder.image} 
                       alt={`${founder.name} - ${founder.role}`}
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
                     {founder.name}
                   </h3>
-                  <p className="text-sm text-orange-600 dark:text-orange-400 font-semibold mb-6">
+                  <p className="text-sm text-red-600 dark:text-red-400 font-semibold mb-6">
                     {founder.role}
                   </p>
                 </div>
                 
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                <p className="text-sm text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
                   {founder.description}
                 </p>
                 
                 <div className="space-y-3">
-                  <h4 className="text-xs font-semibold text-gray-900 dark:text-white uppercase tracking-wider">
+                  <h4 className="text-xs font-semibold text-slate-900 dark:text-white uppercase tracking-wider">
                     Areas of Expertise
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {founder.expertise.map((skill, skillIndex) => (
                       <span
                         key={skillIndex}
-                        className="px-3 py-1 bg-orange-50 dark:bg-orange-900/20 text-orange-700 dark:text-orange-300 text-xs font-medium rounded-full border border-orange-200 dark:border-orange-800"
+                        className="px-3 py-1 bg-gradient-to-r from-red-50 to-pink-50 dark:from-red-900/20 dark:to-pink-900/20 text-red-700 dark:text-red-300 text-xs font-medium rounded-full border border-red-200 dark:border-red-800"
                       >
                         {skill}
                       </span>
@@ -555,109 +555,109 @@ function App() {
       </section>
 
       {/* Products Section */}
-      <section id="products" className="py-24 bg-white dark:bg-slate-900 scroll-mt-16">
+      <section id="products" className="py-24 bg-slate-50 dark:bg-black scroll-mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fade-in">
             <div className="mb-6">
-              <div className="w-12 h-1 bg-orange-500 mx-auto mb-4"></div>
-              <div className="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider mb-4">
+              <div className="w-12 h-1 bg-gradient-to-r from-red-500 to-pink-500 mx-auto mb-4"></div>
+              <div className="text-sm font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-4">
                 OUR PRODUCTS
               </div>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
               Innovative Solutions for Modern Challenges
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
               Cutting-edge products designed to simplify complex processes and enhance productivity across various use cases and industries.
             </p>
           </div>
 
           <div className="max-w-6xl mx-auto">
-            <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg shadow-xl overflow-hidden animate-slide-up">
+            <div className="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-lg shadow-xl overflow-hidden animate-slide-up">
               <div className="grid lg:grid-cols-2 gap-0">
                 <div className="p-8 lg:p-12 space-y-8">
                   <div className="mb-6">
-                    <div className="w-8 h-1 bg-orange-500 mb-4"></div>
-                    <div className="text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider mb-4">
+                    <div className="w-8 h-1 bg-gradient-to-r from-red-500 to-pink-500 mb-4"></div>
+                    <div className="text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-4">
                       RIPE HASH PRODUCTS
                     </div>
                   </div>
                   
                   <div className="flex items-center space-x-4 mb-6">
-                    <div className="w-12 h-12 bg-blue-50 dark:bg-blue-900/20 rounded-lg flex items-center justify-center">
+                    <div className="w-12 h-12 bg-slate-100 dark:bg-zinc-800 rounded-lg flex items-center justify-center">
                       <img 
-                        src="/Screenshot 2025-07-04 at 10.22.42 AM.png" 
+                        src="/supaimg1.png" 
                         alt="Supaimg - Image Hosting Platform" 
                         className="w-8 h-8 rounded"
                       />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
                       Supaimg
                     </h3>
                   </div>
                   
-                  <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
+                  <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">
                     Revolutionary image hosting platform with unlimited storage and instant uploads
                   </h4>
                   
-                  <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                  <p className="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
                     Supaimg revolutionizes image hosting by eliminating the complexity typically associated with file management and sharing. Our platform provides instant image uploads without requiring user registration, making it the perfect solution for developers, content creators, and businesses who need reliable, scalable image hosting.
                   </p>
                   
                   <div className="space-y-4 mb-8">
                     <div className="flex items-start space-x-3">
                       <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm text-gray-600 dark:text-gray-400">Instant uploads with no registration required</span>
+                      <span className="text-sm text-slate-600 dark:text-slate-400">Instant uploads with no registration required</span>
                     </div>
                     <div className="flex items-start space-x-3">
                       <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm text-gray-600 dark:text-gray-400">Unlimited storage capacity for all image types</span>
+                      <span className="text-sm text-slate-600 dark:text-slate-400">Unlimited storage capacity for all image types</span>
                     </div>
                     <div className="flex items-start space-x-3">
                       <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm text-gray-600 dark:text-gray-400">Cross-device accessibility and synchronization</span>
+                      <span className="text-sm text-slate-600 dark:text-slate-400">Cross-device accessibility and synchronization</span>
                     </div>
                     <div className="flex items-start space-x-3">
                       <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm text-gray-600 dark:text-gray-400">Developer-friendly API for seamless integration</span>
+                      <span className="text-sm text-slate-600 dark:text-slate-400">Developer-friendly API for seamless integration</span>
                     </div>
                     <div className="flex items-start space-x-3">
                       <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm text-gray-600 dark:text-gray-400">Enterprise-grade security and compliance</span>
+                      <span className="text-sm text-slate-600 dark:text-slate-400">Enterprise-grade security and compliance</span>
                     </div>
                   </div>
                   
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <button className="flex items-center justify-center space-x-2 bg-black dark:bg-white text-white dark:text-black px-6 py-3 text-sm font-semibold hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl transform hover:scale-105">
+                    <button className="flex items-center justify-center space-x-2 bg-gradient-to-r from-red-500 to-pink-500 text-white px-6 py-3 text-sm font-semibold hover:from-red-600 hover:to-pink-600 transition-colors shadow-lg hover:shadow-xl transform hover:scale-105">
                       <ArrowRight className="w-4 h-4" />
                       <span>Try Supaimg</span>
                     </button>
-                    <button className="flex items-center justify-center space-x-2 border-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-300 px-6 py-3 text-sm font-semibold hover:border-gray-400 dark:hover:border-gray-500 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors">
+                    <button className="flex items-center justify-center space-x-2 border-2 border-slate-300 dark:border-zinc-600 text-slate-900 dark:text-slate-300 px-6 py-3 text-sm font-semibold hover:border-slate-400 dark:hover:border-zinc-500 hover:bg-slate-100 dark:hover:bg-zinc-800 transition-colors">
                       <Code className="w-4 h-4" />
                       <span>API Documentation</span>
                     </button>
                   </div>
                 </div>
                 
-                <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-slate-700 dark:to-slate-600 p-8 lg:p-12 flex items-center justify-center">
+                <div className="bg-gradient-to-br from-slate-100 to-slate-200 dark:from-zinc-800 dark:to-zinc-700 p-8 lg:p-12 flex items-center justify-center">
                   <div className="text-center">
-                    <div className="w-20 h-20 bg-white dark:bg-slate-800 rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-lg">
+                    <div className="w-20 h-20 bg-white dark:bg-black rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-lg border border-slate-200 dark:border-zinc-700">
                       <img 
-                        src="/Screenshot 2025-07-04 at 10.22.42 AM.png" 
+                        src="/supaimg1.png" 
                         alt="Supaimg Platform Preview" 
                         className="w-12 h-12 rounded"
                       />
                     </div>
-                    <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-4">
+                    <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-4">
                       Coming Soon
                     </h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed max-w-sm">
+                    <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-sm">
                       Experience the future of image hosting with our revolutionary platform that combines simplicity, reliability, and powerful features in one seamless solution.
                     </p>
                     <div className="mt-6 flex justify-center space-x-2">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                      <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                      <div className="w-2 h-2 bg-pink-400 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+                      <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse"></div>
+                      <div className="w-2 h-2 bg-pink-400 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
+                      <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
                     </div>
                   </div>
                 </div>
@@ -668,47 +668,47 @@ function App() {
       </section>
 
       {/* Insights Section */}
-      <section id="insights" className="py-24 bg-gray-50 dark:bg-slate-800 scroll-mt-16">
+      <section id="insights" className="py-24 bg-white dark:bg-zinc-900 scroll-mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fade-in">
             <div className="mb-6">
-              <div className="w-12 h-1 bg-orange-500 mx-auto mb-4"></div>
-              <div className="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider mb-4">
+              <div className="w-12 h-1 bg-gradient-to-r from-red-500 to-pink-500 mx-auto mb-4"></div>
+              <div className="text-sm font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-4">
                 INSIGHTS & PERSPECTIVES
               </div>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
               Thought Leadership & Industry Insights
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
               Our latest thinking on technology trends, product development, and the future of digital innovation.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
             {insights.map((insight, index) => (
-              <div key={index} className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-700 p-8 group hover:shadow-xl hover:border-orange-200 dark:hover:border-orange-800 transition-all duration-300 animate-slide-up" style={{animationDelay: `${index * 0.1}s`}}>
+              <div key={index} className="bg-slate-50 dark:bg-black border border-slate-200 dark:border-zinc-800 p-8 group hover:shadow-xl hover:border-red-200 dark:hover:border-red-800 transition-all duration-300 animate-slide-up" style={{animationDelay: `${index * 0.1}s`}}>
                 <div className="mb-6">
-                  <div className="w-8 h-1 bg-orange-500 mb-4"></div>
+                  <div className="w-8 h-1 bg-gradient-to-r from-red-500 to-pink-500 mb-4"></div>
                   <div className="flex items-center justify-between mb-4">
-                    <div className="text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider">
+                    <div className="text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
                       {insight.category}
                     </div>
-                    <div className="text-xs text-gray-500 dark:text-gray-500">
+                    <div className="text-xs text-slate-500 dark:text-slate-500">
                       {insight.readTime}
                     </div>
                   </div>
                 </div>
                 
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 leading-tight group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 leading-tight group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
                   {insight.title}
                 </h3>
                 
-                <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                <p className="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
                   {insight.description}
                 </p>
                 
-                <button className="flex items-center space-x-2 bg-black dark:bg-white text-white dark:text-black px-4 py-2 text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors group-hover:bg-orange-600 dark:group-hover:bg-orange-500 dark:group-hover:text-white">
+                <button className="flex items-center space-x-2 bg-slate-900 dark:bg-white text-white dark:text-black px-4 py-2 text-sm font-medium hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors group-hover:bg-gradient-to-r group-hover:from-red-500 group-hover:to-pink-500 dark:group-hover:text-white">
                   <ArrowRight className="w-4 h-4" />
                   <span>{insight.cta}</span>
                 </button>
@@ -719,51 +719,51 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-white dark:bg-slate-900 scroll-mt-16">
+      <section id="contact" className="py-24 bg-slate-50 dark:bg-black scroll-mt-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="animate-fade-in">
             <div className="mb-6">
-              <div className="w-12 h-1 bg-orange-500 mx-auto mb-4"></div>
-              <div className="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider mb-4">
+              <div className="w-12 h-1 bg-gradient-to-r from-red-500 to-pink-500 mx-auto mb-4"></div>
+              <div className="text-sm font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-4">
                 GET IN TOUCH
               </div>
             </div>
             
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
               Ready to Transform Your Business?
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 mb-12 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg text-slate-600 dark:text-slate-400 mb-12 leading-relaxed max-w-2xl mx-auto">
               Let's discuss how our innovative technology solutions can accelerate your digital transformation and drive sustainable growth for your organization.
             </p>
             
             <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-2xl mx-auto">
-              <div className="bg-gray-50 dark:bg-slate-800 p-6 rounded-lg">
-                <div className="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-lg mx-auto mb-4">
-                  <Mail className="w-6 h-6 text-orange-600 dark:text-orange-400" />
+              <div className="bg-white dark:bg-zinc-900 p-6 rounded-lg border border-slate-200 dark:border-zinc-800">
+                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-red-50 to-pink-50 dark:from-red-900/20 dark:to-pink-900/20 rounded-lg mx-auto mb-4">
+                  <Mail className="w-6 h-6 text-red-600 dark:text-red-400" />
                 </div>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Email Us</h3>
+                <h3 className="font-semibold text-slate-900 dark:text-white mb-2">Email Us</h3>
                 <a 
-                  href="mailto:shahidmdzeeshan@gmail.com" 
-                  className="text-gray-600 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
+                  href="mailto:contact@ripehash.com" 
+                  className="text-slate-600 dark:text-slate-400 hover:text-red-600 dark:hover:text-red-400 transition-colors"
                 >
-                  shahidmdzeeshan@gmail.com
+                  contact@ripehash.com
                 </a>
               </div>
-              <div className="bg-gray-50 dark:bg-slate-800 p-6 rounded-lg">
-                <div className="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-lg mx-auto mb-4">
-                  <Phone className="w-6 h-6 text-orange-600 dark:text-orange-400" />
+              <div className="bg-white dark:bg-zinc-900 p-6 rounded-lg border border-slate-200 dark:border-zinc-800">
+                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-red-50 to-pink-50 dark:from-red-900/20 dark:to-pink-900/20 rounded-lg mx-auto mb-4">
+                  <Phone className="w-6 h-6 text-red-600 dark:text-red-400" />
                 </div>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Call Us</h3>
+                <h3 className="font-semibold text-slate-900 dark:text-white mb-2">Call Us</h3>
                 <a 
                   href="tel:+919065813072" 
-                  className="text-gray-600 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
+                  className="text-slate-600 dark:text-slate-400 hover:text-red-600 dark:hover:text-red-400 transition-colors"
                 >
                   +91 9065813072
                 </a>
               </div>
             </div>
             
-            <button className="px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-sm font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+            <button className="px-8 py-4 bg-gradient-to-r from-red-500 to-pink-500 text-white text-sm font-semibold hover:from-red-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
               Start Your Project Today
             </button>
           </div>
@@ -771,25 +771,25 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 dark:bg-slate-950 text-white py-16">
+      <footer className="bg-slate-900 dark:bg-black text-white py-16 border-t border-slate-200 dark:border-zinc-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
               <div className="flex items-center space-x-3 mb-6">
-                <img 
-                  src="/Group 2201.png" 
-                  alt="Ripe Hash - Technology Made Simple" 
-                  className="h-6 w-auto brightness-0 invert"
-                />
+               <img 
+  src="/Group 2201-white.png"
+  alt="Ripe Hash - Technology Made Simple" 
+  className="h-6 w-auto"
+/>
               </div>
-              <p className="text-sm text-gray-400 mb-6 max-w-md leading-relaxed">
+              <p className="text-sm text-slate-400 mb-6 max-w-md leading-relaxed">
                 Building innovative products that make technology effortless and accessible for everyone. We are committed to creating solutions that bridge the gap between complex technical capabilities and seamless user experiences.
               </p>
-              <div className="space-y-2 text-sm text-gray-400">
+              <div className="space-y-2 text-sm text-slate-400">
                 <div className="flex items-center space-x-2">
                   <Mail className="w-4 h-4" />
-                  <a href="mailto:shahidmdzeeshan@gmail.com" className="hover:text-white transition-colors">
-                    shahidmdzeeshan@gmail.com
+                  <a href="mailto:contact@ripehash.com" className="hover:text-white transition-colors">
+                    contact@ripehash.com
                   </a>
                 </div>
                 <div className="flex items-center space-x-2">
@@ -803,7 +803,7 @@ function App() {
             
             <div>
               <h4 className="text-sm font-semibold mb-6 text-white">Company</h4>
-              <ul className="space-y-3 text-sm text-gray-400">
+              <ul className="space-y-3 text-sm text-slate-400">
                 <li><button onClick={() => scrollToSection('about')} className="hover:text-white transition-colors">About Us</button></li>
                 <li><button onClick={() => scrollToSection('services')} className="hover:text-white transition-colors">Services</button></li>
                 <li><button onClick={() => scrollToSection('founders')} className="hover:text-white transition-colors">Leadership</button></li>
@@ -813,7 +813,7 @@ function App() {
             
             <div>
               <h4 className="text-sm font-semibold mb-6 text-white">Products & Resources</h4>
-              <ul className="space-y-3 text-sm text-gray-400">
+              <ul className="space-y-3 text-sm text-slate-400">
                 <li><button onClick={() => scrollToSection('products')} className="hover:text-white transition-colors">Supaimg</button></li>
                 <li><button onClick={() => scrollToSection('insights')} className="hover:text-white transition-colors">Insights</button></li>
                 <li><a href="#" className="hover:text-white transition-colors">API Documentation</a></li>
@@ -822,7 +822,7 @@ function App() {
             </div>
           </div>
           
-          <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+          <div className="border-t border-slate-800 dark:border-zinc-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
             <p>&copy; 2025 Ripe Hash. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
